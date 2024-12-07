@@ -10,27 +10,27 @@ const AllReviews = () => {
   const [sortOrder, setSortOrder] = useState("asc"); 
   const [genre, setGenre] = useState("");
 
-  // useEffect(() => {
-  //   const fetchReviews = async () => {
-  //     try {
-  //       const queryParams = new URLSearchParams();
-  //       if (sortBy) queryParams.append("sortBy", sortBy);
-  //       if (sortOrder) queryParams.append("sortOrder", sortOrder);
-  //       if (genre) queryParams.append("genre", genre);
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const queryParams = new URLSearchParams();
+        if (sortBy) queryParams.append("sortBy", sortBy);
+        if (sortOrder) queryParams.append("sortOrder", sortOrder);
+        if (genre) queryParams.append("genre", genre);
 
-  //       const response = await fetch(`https://gamer-server.vercel.app/api/reviews?${queryParams.toString()}`);
-  //       const data = await response.json();
-  //       setReviews(data); 
-  //       setFilteredReviews(data);
-  //     } catch (error) {
-  //       console.error("Error fetching reviews:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
+        const response = await fetch(`https://gamer-server.vercel.app/api/reviews?${queryParams.toString()}`);
+        const data = await response.json();
+        setReviews(data); 
+        setFilteredReviews(data);
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  //   fetchReviews();
-  // }, [sortBy, sortOrder, genre]);
+    fetchReviews();
+  }, [sortBy, sortOrder, genre]);
 
 
   // Handle sorting changes
