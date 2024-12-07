@@ -18,11 +18,11 @@ const Home = () => {
   const [highestRatedGames, setHighestRatedGames] = useState([])
 
   useEffect(() => {
-    // Fetch highest-rated games
+    
     fetch("https://gamer-server.vercel.app/api/reviews?limit=6")
       .then((res) => res.json())
       .then((data) => {
-        const sortedGames = data.sort((a, b) => b.rating - a.rating); // Sort by rating (high to low)
+        const sortedGames = data.sort((a, b) => b.rating - a.rating);
         setHighestRatedGames(sortedGames);
       });
 
@@ -34,7 +34,6 @@ const Home = () => {
     });
   }, []);
 
-  // Slider settings
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -47,7 +46,9 @@ const Home = () => {
 
   return (
     <div className="space-y-8">
+
       {/* Banner/Slider */}
+      
       <div className="mt-10" data-aos="fade-up">
         <Slider {...sliderSettings}>
           <div>

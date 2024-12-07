@@ -89,7 +89,6 @@ const Register = () => {
     }
   };
 
-
   const handleGoogleRegister = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
@@ -110,15 +109,11 @@ const Register = () => {
   };
 
   return (
-
-
     <div>
       <div className="flex justify-center my-16 ">
         <div className="container">
           <div className="text-3xl  font-semibold ml-[70px]">Register</div>
           <form className="form relative" onSubmit={handleRegister}>
-
-
             <input
               placeholder="Name"
               id="name"
@@ -173,14 +168,12 @@ const Register = () => {
               </button>
             </div>
 
-
             <input value="Register" type="submit" className="login-button" />
 
             <div className="social-account-container">
               <span className="title">Or Sign in with</span>
               <div className="flex-col-1 space-y-3"></div>
             </div>
-
 
             <label className="flex cursor-pointer items-center justify-between p-1">
               <div className="relative inline-block">
@@ -234,7 +227,6 @@ const Register = () => {
                   </svg>
                   Google
                 </button>
-
               </div>
             </div>
           </div>

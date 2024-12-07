@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa";
 import { AuthContext } from "../AuthProvider";
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from "react-simple-typewriter";
 import logo from "/public/logo.png";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { ThemeContext } from "../Theme";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
-  const {toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -20,8 +20,7 @@ const Navbar = () => {
   return (
     <div className="navbar pt-5">
       <div className="navbar-start">
-
-      <div className="dropdown ">
+        <div className="dropdown ">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,51 +90,48 @@ const Navbar = () => {
 
             {user ? (
               <>
-              <NavLink
-                to="/addreview"
-                className={({ isActive }) =>
-                  isActive
-                    ? "px-4 py-2 text-white text-sm font-semibold rounded-xl bg-black hover:bg-black hover:text-white hover:rounded-xl"
-                    : "px-4 py-2 text-sm font-semibold"
-                }
-              >
-                Add Review
-              </NavLink>
+                <NavLink
+                  to="/addreview"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "px-4 py-2 text-white text-sm font-semibold rounded-xl bg-black hover:bg-black hover:text-white hover:rounded-xl"
+                      : "px-4 py-2 text-sm font-semibold"
+                  }
+                >
+                  Add Review
+                </NavLink>
 
-              <NavLink
-                to="/myreviews"
-                className={({ isActive }) =>
-                  isActive
-                    ? "px-4 py-2 text-white font-semibold bg-black rounded-xl"
-                    : "px-4 py-2 font-semibold"
-                }
-              >
-                My Reviews
-              </NavLink>
-              <NavLink
-                to="/watchlist"
-                className={({ isActive }) =>
-                  isActive
-                    ? "px-4 py-2 text-white bg-black rounded-xl"
-                    : "px-4 py-2 font-semibold"
-                }
-              >
-                Wishlist
-              </NavLink>
-              
+                <NavLink
+                  to="/myreviews"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "px-4 py-2 text-white font-semibold bg-black rounded-xl"
+                      : "px-4 py-2 font-semibold"
+                  }
+                >
+                  My Reviews
+                </NavLink>
+                <NavLink
+                  to="/watchlist"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "px-4 py-2 text-white bg-black rounded-xl"
+                      : "px-4 py-2 font-semibold"
+                  }
+                >
+                  Wishlist
+                </NavLink>
               </>
-            ) : 
-            []
-            }
+            ) : (
+              []
+            )}
           </ul>
         </div>
 
         <Link to="/" className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="h-10 w-8 rounded-full" />
-          <span className="text-xl font-bold">Chill Gamer</span>
-          <div className="text-xl font-bold" >
-
-          <Typewriter words={['Chill Gamer']} loop />
+          <div className="text-xl font-bold">
+            <Typewriter words={["Chill Gamer"]} loop />
           </div>
         </Link>
       </div>
@@ -146,9 +142,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive
-                ? "px-4 py-2 text-[#fa3d3d] rounded-xl"
-                : "px-4 py-2"
+              isActive ? "px-4 py-2 text-[#fa3d3d] rounded-xl" : "px-4 py-2"
             }
           >
             Home
@@ -156,9 +150,7 @@ const Navbar = () => {
           <NavLink
             to="/reviews"
             className={({ isActive }) =>
-              isActive
-                ? "px-4 py-2 text-[#fa3d3d] rounded-xl"
-                : "px-4 py-2"
+              isActive ? "px-4 py-2 text-[#fa3d3d] rounded-xl" : "px-4 py-2"
             }
           >
             All Reviews
@@ -168,9 +160,7 @@ const Navbar = () => {
               <NavLink
                 to="/addreview"
                 className={({ isActive }) =>
-                  isActive
-                    ? "px-4 py-2 text-[#fa3d3d] rounded-xl"
-                    : "px-4 py-2"
+                  isActive ? "px-4 py-2 text-[#fa3d3d] rounded-xl" : "px-4 py-2"
                 }
               >
                 Add Review
@@ -178,9 +168,7 @@ const Navbar = () => {
               <NavLink
                 to="/myreviews"
                 className={({ isActive }) =>
-                  isActive
-                    ? "px-4 py-2 text-[#fa3d3d] rounded-xl"
-                    : "px-4 py-2"
+                  isActive ? "px-4 py-2 text-[#fa3d3d] rounded-xl" : "px-4 py-2"
                 }
               >
                 My Reviews
@@ -188,9 +176,7 @@ const Navbar = () => {
               <NavLink
                 to="/watchlist"
                 className={({ isActive }) =>
-                  isActive
-                    ? "px-4 py-2 text-[#fa3d3d] rounded-xl"
-                    : "px-4 py-2"
+                  isActive ? "px-4 py-2 text-[#fa3d3d] rounded-xl" : "px-4 py-2"
                 }
               >
                 Wishlist
@@ -205,10 +191,7 @@ const Navbar = () => {
         {user ? (
           <div className="flex items-center space-x-4">
             {/* User Avatar */}
-            <DarkModeSwitch
-                onClick={toggleTheme}
-                size={30}
-            />
+            <DarkModeSwitch onClick={toggleTheme} size={30} />
 
             <button
               onClick={handleLogout}
@@ -221,7 +204,10 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <div tabIndex={0} className="avatar cursor-pointer">
                 <div className="w-10 rounded-full">
-                  <img src={user.photoURL || "/default-avatar.png"} alt="User" />
+                  <img
+                    src={user.photoURL || "/default-avatar.png"}
+                    alt="User"
+                  />
                 </div>
               </div>
               <ul
@@ -229,7 +215,9 @@ const Navbar = () => {
                 className="relative bg-gray-100 dropdown-content mt-3 p-4 shadow-lg rounded-box w-[200px]"
               >
                 <li>
-                  <span className="font-semibold text-xl">{user.displayName}</span>
+                  <span className="font-semibold text-xl">
+                    {user.displayName}
+                  </span>
                 </li>
                 <li>
                   <button
@@ -248,9 +236,7 @@ const Navbar = () => {
             <NavLink
               to="/login"
               className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 text-[#fa3d3d] rounded-xl"
-                  : "px-4 py-2"
+                isActive ? "px-4 py-2 text-[#fa3d3d] rounded-xl" : "px-4 py-2"
               }
             >
               Login
@@ -258,9 +244,7 @@ const Navbar = () => {
             <NavLink
               to="/register"
               className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 text-[#fa3d3d] rounded-xl"
-                  : "px-4 py-2"
+                isActive ? "px-4 py-2 text-[#fa3d3d] rounded-xl" : "px-4 py-2"
               }
             >
               Register
@@ -269,9 +253,6 @@ const Navbar = () => {
         )}
 
         {/* Dark/Light Theme Toggle using react-toggle-dark-mode */}
-
-
-
       </div>
     </div>
   );

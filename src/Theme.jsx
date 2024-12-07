@@ -8,7 +8,7 @@ const ThemeProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    // Apply theme to the body
+
     if (theme === "dark") {
       document.body.classList.add("bg-black", "text-white");
       document.body.classList.remove("bg-white", "text-black");
@@ -17,7 +17,6 @@ const ThemeProvider = ({ children }) => {
       document.body.classList.remove("bg-black", "text-white");
     }
 
-    // Save theme to localStorage
     localStorage.setItem("theme", theme);
   }, [theme]);
 

@@ -7,7 +7,6 @@ const MyWatchlist = () => {
   const [watchlist, setWatchlist] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch the user's watchlist using fetch
   useEffect(() => {
     if (user?.email) {
       fetch(
@@ -78,9 +77,11 @@ const MyWatchlist = () => {
   };
 
   if (loading) {
-    return <div className="flex justify-center mt-[150px]">
-      <div className="loader "></div>
-    </div>
+    return (
+      <div className="flex justify-center mt-[150px]">
+        <div className="loader "></div>
+      </div>
+    );
   }
 
   if (!watchlist.length) {
@@ -102,22 +103,24 @@ const MyWatchlist = () => {
         </thead>
         <tbody>
           {watchlist.map((review) => (
-          <tr key={review._id}>
-          <img src={review.gameCover} className="w-[80px] rounded-badge mt-9" alt="" />
-          <td className="p-10 font-medium">{review.gameTitle}</td>
-          <td>{review.rating}</td>
-          <td>{review.genres}</td>
-          <td className="flex ml-4 mb-10">
-    
-            <button
-              onClick={() => handleRemove(review._id)}
-              className="btn "
-            >
-              Delete
-            </button>
-          </td>
-        </tr>
- 
+            <tr key={review._id}>
+              <img
+                src={review.gameCover}
+                className="w-[80px] rounded-badge mt-9"
+                alt=""
+              />
+              <td className="p-10 font-medium">{review.gameTitle}</td>
+              <td>{review.rating}</td>
+              <td>{review.genres}</td>
+              <td className="flex ml-4 mb-10">
+                <button
+                  onClick={() => handleRemove(review._id)}
+                  className="btn "
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>

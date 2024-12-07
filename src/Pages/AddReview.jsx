@@ -26,7 +26,7 @@ const AddReview = () => {
       gameCover,
       gameTitle,
       reviewDescription,
-      rating: parseInt(rating), // Ensure rating is treated as a number
+      rating: parseInt(rating),
       publishYear,
       genres,
       userEmail: user?.email,
@@ -67,7 +67,7 @@ const AddReview = () => {
         });
       }
     } catch (error) {
-      console.error(error);  // Log the error to check details
+      console.error(error);
       Swal.fire("Error!", "Failed to submit your review.", "error");
     }
   };

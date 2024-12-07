@@ -33,10 +33,9 @@ const AllReviews = () => {
   }, [sortBy, sortOrder, genre]);
 
 
-  // Handle sorting changes
   const handleSort = (selectedSortBy) => {
     setSortBy(selectedSortBy);
-    setSortOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc")); // Toggle sort order
+    setSortOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
   };
 
 
@@ -59,7 +58,6 @@ const AllReviews = () => {
       </Bounce>
       </div>
 
-      {/* Sort Dropdown */}
       <div className="btn my-10 text-lg">
         <label htmlFor="sort-dropdown">Sort by:</label>
         <select id="sort-dropdown" onChange={(e) => handleSort(e.target.value)}>
@@ -68,7 +66,6 @@ const AllReviews = () => {
           <option value="year">Year</option>
         </select>
 
-        {/* Sorting order toggle */}
         {sortBy && (
           <button onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}>
             {sortOrder === "asc" ? "Ascending" : "Descending"}
@@ -76,7 +73,6 @@ const AllReviews = () => {
         )}
       </div>
 
-      {/* Filter by Genre */}
       <div className="filter-container btn btn-ghost text-lg">
         <label htmlFor="genre-filter">Filter by Genre:</label>
         <select
@@ -95,7 +91,6 @@ const AllReviews = () => {
       </div>
 
   
-      {/* Display Reviews */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {filteredReviews.length > 0 ? (
           filteredReviews.map((game) => (
