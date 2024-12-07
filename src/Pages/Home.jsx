@@ -48,7 +48,7 @@ const Home = () => {
   return (
     <div className="space-y-8">
       {/* Banner/Slider */}
-      <div className="mt-10" data-aos="fade-up">
+      {/* <div className="mt-10" data-aos="fade-up">
         <Slider {...sliderSettings}>
           <div>
           <img className="w-full h-full bg-cover bg-center object-cover rounded-[100px]" src={'https://wallpapers.com/images/high/call-of-duty-black-ops-3-ptmmgqov5w3pah30.webp'} alt="" />
@@ -74,7 +74,7 @@ const Home = () => {
           </div>
 
         </Slider>
-      </div>
+      </div> */}
 
       {/* Highest Rated Games Section */}
 
