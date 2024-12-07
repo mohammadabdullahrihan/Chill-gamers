@@ -19,7 +19,6 @@ const Navbar = () => {
 
   return (
     <div className="navbar pt-5">
-      {/* Logo / Website Name */}
       <div className="navbar-start">
 
       <div className="dropdown ">
