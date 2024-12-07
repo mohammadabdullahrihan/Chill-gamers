@@ -16,35 +16,34 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    errorElement: <ErrorPage />, // Default error page
+    errorElement: <ErrorPage />, 
     children: [
-      // Home route
+    
       {
         path: "/",
         element: <Home />,
       },
 
-      // Authentication routes
       {
         path: "/login",
         element: <Login />,
       },
+
       {
         path: "/register",
         element: <Register />,
       },
 
-      // Reviews routes
       {
-        path: "/reviews", // Fetch and display all reviews
+        path: "/reviews", 
         element: <AllReviews />,
       },
       {
-        path: "/review/:id", // Fetch details of a specific review by ID
+        path: "/review/:id",
         element: <ReviewDetails />,
       },
       {
-        path: "/addreview", // Private route for adding reviews
+        path: "/addreview", 
         element: (
           <PrivateRoute>
             <AddReview />
@@ -52,7 +51,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/myreviews", // User's reviews, requires authentication
+        path: "/myreviews", 
         element: (
           <PrivateRoute>
             <MyReviews />
@@ -60,7 +59,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/updateReview/:id", // Update specific review, private route
+        path: "/updateReview/:id", 
         element: (
           <PrivateRoute>
             <UpdateReview />
@@ -68,9 +67,8 @@ const router = createBrowserRouter([
         ),
       },
 
-      // Watchlist routes
       {
-        path: "/watchlist", // User's watchlist, private route
+        path: "/watchlist", 
         element: (
           <PrivateRoute>
             <MyWatchlist />
@@ -80,7 +78,7 @@ const router = createBrowserRouter([
 
     ],
   },
-  // Fallback for undefined routes
+  
   {
     path: "*",
     element: <ErrorPage />,
