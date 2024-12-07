@@ -16,46 +16,46 @@ const Profile = () => {
   }
 
   return (
-    <div className="profile bg-black container-1 flex rounded-3xl min-h-screen px-[80px] py-[60px] lg:px-[35px] lg:py-[25px]">
-      <div className="lg:py-10">
-        <div className="bg-white shadow-lg rounded-[30px] lg:p-[100px] flex flex-col lg:-ml-0 -ml-[40px] md:-[200px] lg:ml-[140px lg:mt-0 mt-[100px]">
-          <div className="items-center m-5 mr-5 lg:mr-0 space-x-6">
-            <img
-              src={user?.photoURL || "/default-avatar.png"}
-              alt="User Profile"
-              className=" w-[120px] h-[100px] lg:w-32 lg:h-32 ml-[50px] md:ml-[70px] rounded-full border-4 border-gray-300"
-            />
-            <div className="flex flex-col">
-              <p className="lg:text-xl font-semibold mt-2">
-                Email: {user.email}
-              </p>
-              <button
-                onClick={() => setEditing(true)}
-                className="mt-4 mr-5 text-sm lg:text-xl bg-black text-white px-4 py-4 rounded-full hover:bg-black md:mr-7"
-              >
-                Edit Profile
-              </button>
-              {editing && (
-                <button
-                  onClick={() => navigate("/update-profile")}
-                  className="mt-4 mr-5 text-sm px-4 py-4 bg-black text-white rounded-full  md:text-base md:mr-7 hover:bg-black"
-                >
-                  Update Information
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+    // <div className="profile bg-black container-1 flex rounded-3xl min-h-screen px-[80px] py-[60px] lg:px-[35px] lg:py-[25px]">
+    //   <div className="lg:py-10">
+    //     <div className="bg-white shadow-lg rounded-[30px] lg:p-[100px] flex flex-col lg:-ml-0 -ml-[40px] md:-[200px] lg:ml-[140px lg:mt-0 mt-[100px]">
+    //       <div className="items-center m-5 mr-5 lg:mr-0 space-x-6">
+    //         <img
+    //           src={user?.photoURL || "/default-avatar.png"}
+    //           alt="User Profile"
+    //           className=" w-[120px] h-[100px] lg:w-32 lg:h-32 ml-[50px] md:ml-[70px] rounded-full border-4 border-gray-300"
+    //         />
+    //         <div className="flex flex-col">
+    //           <p className="lg:text-xl font-semibold mt-2">
+    //             Email: {user.email}
+    //           </p>
+    //           <button
+    //             onClick={() => setEditing(true)}
+    //             className="mt-4 mr-5 text-sm lg:text-xl bg-black text-white px-4 py-4 rounded-full hover:bg-black md:mr-7"
+    //           >
+    //             Edit Profile
+    //           </button>
+    //           {editing && (
+    //             <button
+    //               onClick={() => navigate("/update-profile")}
+    //               className="mt-4 mr-5 text-sm px-4 py-4 bg-black text-white rounded-full  md:text-base md:mr-7 hover:bg-black"
+    //             >
+    //               Update Information
+    //             </button>
+    //           )}
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
 
-      <div className="">
-        <div className="w-10 bottom-4 left-4 text-white">
-          <h1 className=" md:text-5xl lg:text-7xl text-4xl font-bold  -ml-[240px] md:-mr-[600px] md:ml-[0px] md:p-2 lg:m-10">
-            Welcome, <br /> {user.displayName}
-          </h1>
-        </div>
-      </div>
-    </div>
+    //   <div className="">
+    //     <div className="w-10 bottom-4 left-4 text-white">
+    //       <h1 className=" md:text-5xl lg:text-7xl text-4xl font-bold  -ml-[240px] md:-mr-[600px] md:ml-[0px] md:p-2 lg:m-10">
+    //         Welcome, <br /> {user.displayName}
+    //       </h1>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 

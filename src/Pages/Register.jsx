@@ -113,7 +113,7 @@ const Register = () => {
 
 
     <div>
-      {/* <div className="flex justify-center my-16 ">
+      <div className="flex justify-center my-16 ">
         <div className="container">
           <div className="text-3xl  font-semibold ml-[70px]">Register</div>
           <form className="form relative" onSubmit={handleRegister}>
@@ -239,7 +239,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
