@@ -1,20 +1,20 @@
-import daisyui from "daisyui";
+// import daisyui from "daisyui";
 
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+// /** @type {import('tailwindcss').Config} */
+// export default {
+//   content: [
+//     "./index.html",
+//     "./src/**/*.{js,ts,jsx,tsx}",
+//   ],
 
-  darkMode: "class",
-  
-  theme: {
-    extend: {
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-      },
-    },
-  },
-  plugins: [daisyui],
-};
+//   darkMode: "class",
+
+//   theme: {
+//     extend: {
+//       fontFamily: {
+//         poppins: ["Poppins", "sans-serif"],
+//       },
+//     },
+//   },
+//   plugins: [daisyui],
+// };
