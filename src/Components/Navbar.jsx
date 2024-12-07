@@ -133,7 +133,7 @@ const Navbar = () => {
 
         <Link to="/" className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="h-10 w-8 rounded-full" />
-          {/* <span className="text-xl font-bold">Chill Gamer</span> */}
+          <span className="text-xl font-bold">Chill Gamer</span>
           <div className="text-xl font-bold" >
 
           <Typewriter words={['Chill Gamer']} loop />
