@@ -81,7 +81,7 @@ const Login = () => {
     <div>
       {/* login */}
 
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <div className="container-2 lg:flex">
           <div className="ml-[30px]">
             <div className="heading">Login</div>
@@ -171,7 +171,7 @@ const Login = () => {
             </span>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
