@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Bounce } from "react-awesome-reveal";
 const AllReviews = () => {
   const [reviews, setReviews] = useState([]);
   const [filteredReviews, setFilteredReviews] = useState([]); 
@@ -38,6 +37,15 @@ const AllReviews = () => {
     setSortOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
   };
 
+  const handleGenreFilter = (selectedGenre) => {
+    setGenre(selectedGenre);
+    setFilteredReviews(
+      reviews.filter((review) =>
+        selectedGenre ? review.genres?.includes(selectedGenre) : true
+      )
+    );
+  };
+
 
   if (loading) {
     return (
@@ -53,14 +61,13 @@ const AllReviews = () => {
     <div className="all-reviews-container">
       <div className="flex justify-center">
 
-      <Bounce cascade>
       <h1 className="text-2xl font-semibold">All Reviews</h1>
-      </Bounce>
+
       </div>
 
-      <div className="btn my-10 text-lg">
+      <div className="btn my-10 text-lg text-black">
         <label htmlFor="sort-dropdown">Sort by:</label>
-        <select id="sort-dropdown" onChange={(e) => handleSort(e.target.value)}>
+        <select className="bg-white" id="sort-dropdown" onChange={(e) => handleSort(e.target.value)}>
           <option value="">Select</option>
           <option value="rating">Rating</option>
           <option value="year">Year</option>
@@ -76,6 +83,7 @@ const AllReviews = () => {
       <div className="filter-container btn btn-ghost text-lg">
         <label htmlFor="genre-filter">Filter by Genre:</label>
         <select
+          className="bg-white"
           id="genre-filter"
           value={genre}
           onChange={(e) => handleGenreFilter(e.target.value)}

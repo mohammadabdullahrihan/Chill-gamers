@@ -32,8 +32,8 @@
     rgb(255, 255, 255) 0%,
     rgb(244, 247, 251) 100%
   );
-  border-radius: 40px;
-  padding: 100px 35px;
+  border-radius: 30px;
+  padding: 15px 40px;
   border: 5px solid rgb(255, 255, 255);
   box-shadow: rgba(232, 196, 128, 0.878) 0px 30px 30px -20px;
   margin: 10px;

@@ -98,7 +98,7 @@ const ReviewDetails = () => {
       <div className="review-card lg:flex">
         <div>
           <img
-            src={review.gameCover}
+           src={review?.gameCover ? review.gameCover : "https://via.placeholder.com/150"}
             alt={`${review.gameTitle} cover`}
             className="game-cover-img rounded-3xl"
           />

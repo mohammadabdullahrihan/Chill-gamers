@@ -89,33 +89,36 @@ const MyWatchlist = () => {
   }
 
   return (
-    <div className="my-watchlist-container">
-      <h1>My Watchlist</h1>
-      <table className="watchlist-table">
+    <div className="my-watchlist-container px-4 sm:px-6 lg:px-8">
+    <h1 className="text-center text-2xl font-semibold mb-6">My Watchlist</h1>
+    <div className="overflow-hidden">
+      <table className="watchlist-table w-full border-collapse table-auto">
         <thead>
-          <tr>
-            <th>Game Cover</th>
-            <th>Game Title</th>
-            <th>Genre</th>
-            <th>Rating</th>
-            <th>Action</th>
+          <tr className="text-lg bg-gray-100">
+            <th className="px-4 py-2">Game Cover</th>
+            <th className="px-4 py-2">Game Title</th>
+            <th className="px-4 py-2">Genre</th>
+            <th className="px-4 py-2">Rating</th>
+            <th className="px-4 py-2">Action</th>
           </tr>
         </thead>
         <tbody>
           {watchlist.map((review) => (
-            <tr key={review._id}>
-              <img
-                src={review.gameCover}
-                className="w-[80px] rounded-badge mt-9"
-                alt=""
-              />
-              <td className="p-10 font-medium">{review.gameTitle}</td>
-              <td>{review.rating}</td>
-              <td>{review.genres}</td>
-              <td className="flex ml-4 mb-10">
+            <tr key={review._id} className="border-t">
+              <td className="px-4 py-2 flex items-center justify-center">
+                <img
+                  src={review.gameCover}
+                  className="w-[80px] h-[80px] rounded-md object-cover"
+                  alt={review.gameTitle}
+                />
+              </td>
+              <td className="px-4 py-2 font-medium">{review.gameTitle}</td>
+              <td className="px-4 py-2 text-center">{review.genres}</td>
+              <td className="px-4 py-2 text-center">{review.rating}</td>
+              <td className="px-4 py-2 flex justify-center items-center">
                 <button
                   onClick={() => handleRemove(review._id)}
-                  className="btn "
+                  className=" border border-black px-6 py-3 rounded-3xl text-sm lg:text-base"
                 >
                   Delete
                 </button>
@@ -125,6 +128,8 @@ const MyWatchlist = () => {
         </tbody>
       </table>
     </div>
+  </div>
+  
   );
 };
 

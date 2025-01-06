@@ -91,48 +91,59 @@ const MyReviews = () => {
   }
 
   return (
-    <div className="my-reviews-container">
-      <h1>My Reviews</h1>
-      {reviews.length > 0 ? (
-        <table className="reviews-table ">
-          <thead>
-            <tr className="text-xl">
-              <th>Game Title</th>
-              <th>Rating</th>
-              <th>Genre</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {reviews.map((review) => (
-              <tr key={review._id}>
+    <div className="my-reviews-container px-4 sm:px-6 lg:px-8">
+  <h1 className="text-center text-2xl font-semibold mb-6">My Reviews</h1>
+  {reviews.length > 0 ? (
+    <div className="overflow-hidden">
+      <table className="reviews-table w-full border-collapse table-auto">
+        <thead>
+          <tr className="text-lg bg-gray-100">
+            <th className="px-4 py-2">Game Title</th>
+            <th className="px-4 py-2">Rating</th>
+            <th className="px-4 py-2">Genre</th>
+            <th className="px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {reviews.map((review) => (
+            <tr key={review._id} className="border-t">
+              <td className="px-4 py-2 flex items-center space-x-4">
                 <img
                   src={review.gameCover}
-                  className="w-[80px] rounded-badge  lg:mt-9"
-                  alt=""
+                  className="w-12 h-12 rounded-md object-cover"
+                  alt={review.gameTitle}
                 />
-                <td className="lg:p-10 font-medium">{review.gameTitle}</td>
-                <td>{review.rating}</td>
-                <td>{review.genres}</td>
-                <td className="lg:flex md:flex lg:ml-4 mb-10 ">
-                  <Link to={`/updateReview/${review._id}`} className="btn ">
-                    Update
-                  </Link>
-                  <button
-                    onClick={() => handleDelete(review._id)}
-                    className="btn "
-                  >
-                    Delete
+                <span className="font-medium">{review.gameTitle}</span>
+              </td>
+              <td className="px-4 py-2 text-center">{review.rating}</td>
+              <td className="px-4 py-2 text-center">{review.genres}</td>
+              <td className="px-4 py-2 flex justify-center space-x-2">
+                <Link
+                  to={`/updateReview/${review._id}`}
+                >
+                  <button className="text-sm lg:text-base border border-black  px-5 py-2 rounded-3xl">
+                  Update
                   </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p>No reviews found. Start adding some reviews!</p>
-      )}
+                </Link>
+                <button
+                  onClick={() => handleDelete(review._id)}
+                  className="text-sm lg:text-base border border-black px-5 py-2 rounded-3xl"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
+  ) : (
+    <p className="text-center text-lg font-medium mt-6">
+      No reviews found. Start adding some reviews!
+    </p>
+  )}
+</div>
+
   );
 };
 
