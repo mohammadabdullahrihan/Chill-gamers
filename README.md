@@ -77,8 +77,10 @@ Follow these steps to set up Chill Gamer on your local machine:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/chill-gamer.git
-   cd chill-gamer
+   git clone [https://github.com/mohammadabdullahrihan/Chill-gamers-client.git]
+   cd chill-gamers-client
+   git clone [https://github.com/mohammadabdullahrihan/Chill-gamers-server.git]
+   cd chill-gamers-server
    ```
 
 2. Install dependencies for both frontend and backend:
