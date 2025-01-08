@@ -120,7 +120,7 @@ Follow these steps to set up Chill Gamer on your local machine:
 ## Relevant Links
 
 - **Live Site**: [Chill Gamer](https://chill-gamer-rihan.netlify.app/)
-- **Frontend Repository**: [GitHub Repo - Frontend]((https://github.com/mohammadabdullahrihan/Chill-gamers-client))
+- **Frontend Repository**: [GitHub Repo - Frontend](https://github.com/mohammadabdullahrihan/Chill-gamers-client)
 - **Backend Repository**: [GitHub Repo - Backend](https://github.com/mohammadabdullahrihan/Chill-gamers-server)
 
 ---
